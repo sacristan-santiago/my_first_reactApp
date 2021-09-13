@@ -1,39 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Nav from './components/NavBar';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Bienvendo a mi sitio web!</h1>
+        <Nav />
+      </header>
+      <main>
+        <h1>Bienvendo a Swap!</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Mi nombre es Santiago y a continuacion encontrarás un link a mi repositorio de GitHub:
+          En swap podrás intercambiar tu casa con la de otra persona en cualquier parte del mundo!
         </p>
-        <a
-          className="App-link"
-          href="https://github.com/sacristan-santiago"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Mi Repositorio
-        </a>
-        <p>
-          Y también links a mi proyectos previos!!!
-        </p>
-        <a
-          className="App-link"
-          href="https://sacristan-santiago.github.io/javascript_interactuando_DOM/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Mi caja registradora</a>
-        <a
-          className="App-link"
-          href="https://sacristan-santiago.github.io/Consultorio-Neurologia/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Consultorio de Neurologia</a>
-      </header>
+      </main>
     </div>
   );
 }
