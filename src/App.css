@@ -37,6 +37,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
 }
 
 .header_nav ul {
@@ -46,9 +47,8 @@ body {
   align-items: center;
 }
 
-.header_nav ul a {
+.header_nav ul li {
   padding-left: 1rem;
-  text-decoration: none;
   color: white;
 }
 
@@ -65,4 +65,7 @@ body {
   }
 }
 
-
+.Paises-list {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}

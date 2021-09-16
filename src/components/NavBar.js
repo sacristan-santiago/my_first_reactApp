@@ -1,16 +1,16 @@
-import '../App.css';
-import logo from "../logo.svg"
+import CartWidget from './CartWidjet'
 
 const Nav = () => {
     return (
         <nav className="header_nav">
             <h1>Swap</h1>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Swaps</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li>Inicio</li>
+                <li>Swaps</li>
+                <li>Nosotros</li>
+                <li>Contacto</li>
             </ul>
+            <CartWidget />
         </nav>
     )
 }
