@@ -7,6 +7,7 @@ body {
   background-color: #ad1e96;
   color: white;
 }
+
 .App {
   text-align: center;
 }
@@ -68,4 +69,17 @@ body {
 .Paises-list {
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+
+.Item-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Item-count button {
+  border: 1px solid;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }

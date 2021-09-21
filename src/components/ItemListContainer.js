@@ -1,7 +1,6 @@
 import Pais from './Pais'
 
 const ItemListContainer = (props) => {
-    console.log(props)
     const paises = props.paises.map (x => <Pais pais={x} />)
     return (
         <div className="Paises-list">
