@@ -5,13 +5,13 @@ const PaisListContainer = (props) => {
     const [paises, setPaises] = useState ([])
 
     useEffect(()=>{
-        const promise = new Promise ((res)=> {
+        const mockAsync = new Promise ((res)=> {
             setTimeout(()=> {
                 res(props.paises)
             }, 2000)
         })
 
-        promise.then((resultado)=> {
+        mockAsync.then((resultado)=> {
             setPaises(resultado)
         })
     }, [])

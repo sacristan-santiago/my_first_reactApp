@@ -1,10 +1,7 @@
 const Pais = (props) => {
     const pais = props.pais
     return (
-        <li key={pais}>
-            {pais}
-        </li>
-        
+        <li key={pais}>{pais}</li>
     )
 }
 

@@ -71,6 +71,11 @@ body {
   margin-bottom: 1vh;
 }
 
+.Paises-list ul {
+  list-style-type: none;
+}
+
+
 .Item-count {
   display: flex;
   justify-content: center;
@@ -82,4 +87,9 @@ body {
   padding: 0.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.Items-gallery {
+  display: flex;
+  flex-wrap: wrap;
 }

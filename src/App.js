@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Nav from './components/NavBar';
 import PaisListContainer from './components/PaisListContainer';
-import ItemCount from './components/ItemCount';
+import ItemDetailCointainer from './components/ItemDetailContainer';
 
 function App() {
   return (
@@ -16,7 +15,10 @@ function App() {
         <p>   
           En swap podrás intercambiar tu casa con la de otra persona en cualquier parte del mundo!
         </p>
-        <ItemCount stock={5} initial ={1} onAdd={()=>{console.log("Se agrego el item al carrito")}}/>
+        <p>   
+          Y como somos muy proactivos tambien vendemos algunos productos que podes llevarte de recuerdo de tus viajes!
+        </p>
+        <ItemDetailCointainer />
       </main>
     </div>
   );
