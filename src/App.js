@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Nav from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import PaisListContainer from './components/PaisListContainer';
 import ItemCount from './components/ItemCount';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       </header>
       <main>
         <h1>Bienvendo a Swap!</h1>
-        <ItemListContainer paises={["Argentina", "Uruguay", "Chile"]}/>
+        <PaisListContainer paises={["Argentina", "Chile", "Peru", "Bolivia", "Uruguay"]}/>
         <p>   
           En swap podrás intercambiar tu casa con la de otra persona en cualquier parte del mundo!
         </p>
