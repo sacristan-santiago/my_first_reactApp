@@ -36,7 +36,7 @@ body {
 
 .header_nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   align-items: center;
 }
@@ -45,12 +45,21 @@ body {
   display: flex;
   list-style-type: none; 
   justify-content: flex-end;
+  margin: 0;
   align-items: center;
 }
 
 .header_nav ul li {
   padding-left: 1rem;
+}
+
+.nav-link {
   color: white;
+}
+
+.shopping-cart {
+  margin-left: auto;
+  margin-right: 2rem;
 }
 
 .App-link {
@@ -66,12 +75,12 @@ body {
   }
 }
 
-.Paises-list {
+.Productos-list {
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
 
-.Paises-list ul {
+.Productos-list ul {
   list-style-type: none;
 }
 
@@ -92,4 +101,5 @@ body {
 .Items-gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }

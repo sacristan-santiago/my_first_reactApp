@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Nav from './components/NavBar';
-import PaisListContainer from './components/PaisListContainer';
+import ProductosListContainer from './components/ProductListContainer';
 import ItemDetailCointainer from './components/ItemDetailContainer';
 
 function App() {
@@ -11,25 +11,23 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/">
-            <h1>Bienvendo a Swap!</h1>
-            <PaisListContainer paises={["Argentina", "Chile", "Peru", "Bolivia", "Uruguay"]}/>
-            <p>   
-            En swap podrás intercambiar tu casa con la de otra persona en cualquier parte del mundo!
-            </p>       
+            <p>Probá nuestras Crackers 100% plant based gluten free:</p>
+            <ProductosListContainer productos={["Pimenton", "Carbon", "Mediterraneas", "Semillas"]}/>
           </Route>
           <Route path="/categoria/:id">
-            <h1>Bienvendo a Swap!</h1>
-            <PaisListContainer paises={["Argentina", "Chile", "Peru", "Bolivia", "Uruguay"]}/>
             <p>   
-            En swap podrás intercambiar tu casa con la de otra persona en cualquier parte del mundo!
+            Nuestras crackers son 100% plant based y gluten free, probalas!
             </p> 
+            <ProductosListContainer productos={["Pimenton", "Carbon", "Mediterraneas", "Semillas"]}/>
           </Route>
           <Route path="/item/:id">
             <ItemDetailCointainer />
           </Route>
-        </Switch>        
-          
+          <Route path="/cart">
+            
+          </Route>
 
+        </Switch>              
       </div>
     </BrowserRouter>
     

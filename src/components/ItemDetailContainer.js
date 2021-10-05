@@ -1,22 +1,36 @@
 import { useEffect, useState } from 'react';
-import ItemDetailList from './ItemDetailList.js';
+import { useParams } from 'react-router';
+import ItemDetail from './ItemDetail.js';
 
-const ItemDetailCointainer = (props) => {
+const ItemDetailCointainer = () => {
     const [items, setItems] = useState ([])
+    const {id} = useParams();
+    
+    const mockItem = {
+        title: "Pimenton",
+        description: "Crackers a base de harina de arroz y pimenton",
+        image: "/pimenton.jpg"
+    }
 
     useEffect(()=>{
-        fetch('https://fakestoreapi.com/products/')
-            .then(res=>res.json())
-            .then(data=>setItems(data))
+        //este fetch deberia traer de la API el producto con :id=id
+        // fetch('https://fakestoreapi.com/products/')
+        //     .then(res=>res.json())
+        //     .then(data=>setItems(data))
+        setItems([mockItem]);
     }, [])
 
-    console.log(items);
-    
-    return (
-        <div className="Items-list">
-            <ItemDetailList items={items}/>
-        </div>
-    )
+    if (items.length<=0) {
+        return (
+            <>Cargando...</>
+        )
+    } else {
+        return (
+            <div className="Items-gallery">
+                <ItemDetail item={items[0]}/>
+            </div>
+        )
+    }
 }
 
 export default ItemDetailCointainer;
