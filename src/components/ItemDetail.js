@@ -1,12 +1,16 @@
 import ItemCount from "./ItemCount.js"
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { CartContext } from "./CartContext.js";
+
 
 const ItemDetail = (props) => {
-    const {image, title, description} = props.item
+    const {id, title, description, image} = props.item
 
+    const {addItem} = useContext(CartContext)
+    
     const onAdd = (quantity) => {
-        console.log(`Agregar al cart el item:${title} con cantidad ${quantity} `)
+        addItem(props.item, quantity)
     }
 
     return (

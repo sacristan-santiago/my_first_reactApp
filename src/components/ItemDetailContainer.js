@@ -7,6 +7,7 @@ const ItemDetailCointainer = () => {
     const {id} = useParams();
     
     const mockItem = {
+        id: 1, 
         title: "Pimenton",
         description: "Crackers a base de harina de arroz y pimenton",
         image: "/pimenton.jpg"
