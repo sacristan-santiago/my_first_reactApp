@@ -10,6 +10,8 @@ const ItemDetailCointainer = () => {
         id: 1, 
         title: "Pimenton",
         description: "Crackers a base de harina de arroz y pimenton",
+        price: 99.99,
+        stock: 6,
         image: "/pimenton.jpg"
     }
 
