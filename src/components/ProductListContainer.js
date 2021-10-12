@@ -8,7 +8,7 @@ const ProductosListContainer = (props) => {
         const mockAsync = new Promise ((res)=> {
             setTimeout(()=> {
                 res(props.productos)
-            }, 500)
+            }, 200)
         })
 
         mockAsync.then((resultado)=> {

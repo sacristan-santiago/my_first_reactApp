@@ -4,23 +4,50 @@ import ItemDetail from './ItemDetail.js';
 
 const ItemDetailCointainer = () => {
     const [items, setItems] = useState ([])
-    const {id} = useParams();
+    const {name} = useParams();
     
-    const mockItem = {
-        id: 1, 
-        title: "Pimenton",
-        description: "Crackers a base de harina de arroz y pimenton",
-        price: 99.99,
-        stock: 6,
-        image: "/pimenton.jpg"
-    }
+    const mockItems  = [
+        {
+            id: 1, 
+            title: "Pimenton",
+            description: "Crackers a base de harina de arroz sabor pimenton",
+            price: 200.00,
+            stock: 10,
+            image: "/pimenton.jpg"
+        },
+        {
+            id: 2, 
+            title: "Mediterraneas",
+            description: "Crackers a base de harina de arroz sabor mediterráneo",
+            price: 200.00,
+            stock: 10,
+            image: "/mediterraneas.jpg"
+        },
+        {
+            id: 3, 
+            title: "Carbon",
+            description: "Crackers a base de harina de arroz sabor carbon ahumado",
+            price: 200.00,
+            stock: 10,
+            image: "/carbon.jpg"
+        },
+        {
+            id: 3, 
+            title: "Semillas",
+            description: "Crackers a base de harina de arroz con mix de semillas",
+            price: 200.00,
+            stock: 10,
+            image: "/semillas.jpg"
+        }]
 
     useEffect(()=>{
         //este fetch deberia traer de la API el producto con :id=id
         // fetch('https://fakestoreapi.com/products/')
         //     .then(res=>res.json())
         //     .then(data=>setItems(data))
-        setItems([mockItem]);
+        setItems(mockItems);
+        console.log(name)
+        console.log(items.find(item=>item.title === name))
     }, [])
 
     if (items.length<=0) {
@@ -30,7 +57,7 @@ const ItemDetailCointainer = () => {
     } else {
         return (
             <div className="Items-gallery">
-                <ItemDetail item={items[0]}/>
+                <ItemDetail item={items.find(item=>item.title === name)}/>
             </div>
         )
     }

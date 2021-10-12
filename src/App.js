@@ -25,7 +25,7 @@ function App() {
             <ProductosListContainer productos={["Pimenton", "Carbon", "Mediterraneas", "Semillas"]}/>
           </Route>
 
-          <Route path="/item/:id">
+          <Route path="/item/:name">
             <ItemDetailCointainer />   
           </Route>
           <Route path="/cart">
