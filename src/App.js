@@ -14,14 +14,12 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/">
-            <p>Probá nuestras Crackers 100% plant based gluten free:</p>
+            <p className="text-center">Probá nuestras Crackers 100% plant based gluten free:</p>
             <ProductosListContainer productos={["Pimenton", "Carbon", "Mediterraneas", "Semillas"]}/>
           </Route>
           
           <Route path="/categoria/:id">
-            <p>   
-            Nuestras crackers son 100% plant based y gluten free, probalas!
-            </p> 
+            <p className="text-center">Nuestras crackers son 100% plant based y gluten free, probalas!</p> 
             <ProductosListContainer productos={["Pimenton", "Carbon", "Mediterraneas", "Semillas"]}/>
           </Route>
 

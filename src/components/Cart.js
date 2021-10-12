@@ -1,5 +1,6 @@
-import React, {useContext} from 'react';
+import { useContext } from 'react';
 import { CartContext } from './CartContext';
+import { NavLink } from 'react-router-dom';
 
 
 const Cart = () => {
@@ -7,12 +8,21 @@ const Cart = () => {
     const showCart = () => {
         console.log(cart);
     }
-
     
+    let precioTotal = 0 
+    cart.forEach(item => {
+          precioTotal += item.price*item.quantity
+    });
+
     return (
-        <div>
+        <div className="container">
             <h1>Carrito</h1>
-            { (cart.length === 0 ) ? <>No hay productos en el carrito</> : cart.map(item=>{
+            {(cart.length === 0) ? 
+            <>
+                <p>No hay productos en el carrito</p>
+                <NavLink className="nav-link" to="/"><button type="button" class="btn btn-dark">Ver Productos</button></NavLink>
+                
+            </> : cart.map(item =>{
                         return (
                         <div>
                         <table class="table table-hover">
@@ -35,9 +45,12 @@ const Cart = () => {
                             </tr>
                         </tbody>
                         </table>
+                        <h1>Precio total: {precioTotal}</h1>
                         </div>
-                            )})
+                        )})
             }
+
+        {/* <button onClick={showCart}>showcart</button> */}
         </div>
     )
 }

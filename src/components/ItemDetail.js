@@ -5,7 +5,7 @@ import { CartContext } from "./CartContext.js";
 
 
 const ItemDetail = (props) => {
-    const {id, title, description, image, price} = props.item
+    const {id, title, description, image, price, stock} = props.item
 
     const {addItem} = useContext(CartContext)
     
@@ -18,8 +18,8 @@ const ItemDetail = (props) => {
             <img src={image} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
-                <p style={{height: "30vh", overflow: "hidden" }} className="card-text">{description}</p>
-                <ItemCount stock={5} initial ={1} onAdd={onAdd}/>
+                <p style={{height: "10vh", overflow: "hidden" }} className="card-text">{description}</p>
+                <ItemCount stock={stock} initial ={1} onAdd={onAdd}/>
             </div>
             <button><NavLink to="/">Volver</NavLink></button>
         </div>
