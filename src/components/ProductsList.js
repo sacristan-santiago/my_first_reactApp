@@ -4,10 +4,11 @@ const ProductosList = (props) => {
     const productos = props.productos
     
     return (
-        <ul>
-            {productos.map(x=><Producto producto={x}/>)}
-        </ul>
-        
+        <>
+            {productos.map(x => {
+                return <Producto key={x.title} producto={x}/>
+            })}
+        </>
     )
 }
 

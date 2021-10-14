@@ -20,7 +20,7 @@ const Cart = () => {
             {(cart.length === 0) ? 
             <>
                 <p>No hay productos en el carrito</p>
-                <NavLink className="nav-link" to="/"><button type="button" class="btn btn-dark">Ver Productos</button></NavLink>
+                <NavLink className="nav-link" to="/"><button type="button" className="btn btn-dark">Ver Productos</button></NavLink>
                 
             </> : cart.map(item =>{
                         return (
@@ -50,7 +50,7 @@ const Cart = () => {
                         )})
             }
 
-        {/* <button onClick={showCart}>showcart</button> */}
+        <button onClick={showCart}>showcart</button>
         </div>
     )
 }

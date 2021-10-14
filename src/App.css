@@ -80,6 +80,9 @@ body {
   margin-top: 1vh;
   margin-bottom: 1vh;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .Productos-list ul {

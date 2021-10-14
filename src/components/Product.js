@@ -1,10 +1,19 @@
 import { NavLink } from "react-router-dom";
 
 const Producto = (props) => {
-    const producto = props.producto;
-    const route = `/item/${producto}`
+    const { title, description, image, id } = props.producto
+    const route = `/item/${id}`
+
     return (
-        <li key={producto}><NavLink className="nav-link" to={route}>{producto}</NavLink></li>
+    <div className="card" style={{width: "20%", backgroundColor: "gray"}}>
+        <img src={image} className="card-img-top" alt="..."/>
+        <div className="card-body">
+            <h5 className="card-title">{title}</h5>
+            <p style={{height: "15vh", overflow: "hidden" }} className="card-text">{description}</p>
+        </div>
+        <NavLink className="nav-link" to={route}><button type="button" className="btn btn-dark">Comprar</button></NavLink>
+        
+    </div>
     )
 }
 

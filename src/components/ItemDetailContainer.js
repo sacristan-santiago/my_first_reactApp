@@ -1,41 +1,47 @@
-import { app } from '../firebase';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import ItemDetail from './ItemDetail.js';
-import { getDocs, collection } from '@firebase/firestore';
+import { app } from '../firebase';
+import { getDoc, doc } from '@firebase/firestore';
 import { getFirestore } from 'firebase/firestore';
 
 const ItemDetailCointainer = () => {
-    const [items, setItems] = useState ([])
-    const {name} = useParams();
+    const [item, setItem] = useState ({})
+    const {id} = useParams();
+    console.log(id)
 
-    useEffect(async () => {
-        try {
-            const db = getFirestore(app);
-            const itemsCollection = collection(db, "items")
-            const itemsSnapshot = await getDocs(itemsCollection);
-            const itemsList = itemsSnapshot.docs.map(doc => doc.data());
-    
-            if (!collection.size === 0) {
-                console.log("Collection does not exist");
-                return;
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const db = getFirestore(app);
+                const docRef = doc(db, "items", id)
+                const docSnap = await getDoc(docRef)
+        
+                if (!docSnap.exists()) {
+                    console.log("Collection does not exist");
+                } else  {
+                    console.log("Collection found");
+                    const renderItem = docSnap.data();
+                    renderItem.id = docSnap.id
+                    setItem(renderItem)
+                    console.log(item)
+                }
+            } catch (err) {
+                console.log("Error serching items", err)
             }
-            console.log("Collection found");
-            setItems(itemsList)
-            console.log(items)
-        } catch (err) {
-            console.log("Error serching items", err)
         }
+        fetchData();
+
     }, [])
 
-    if (items.length<=0) {
+    if (!item.id) {
         return (
             <>Cargando...</>
         )
     } else {
         return (
             <div className="Items-gallery">
-                <ItemDetail item={items.find(item=>item.title === name)}/>
+                <ItemDetail item={item}/>
             </div>
         )
     }
