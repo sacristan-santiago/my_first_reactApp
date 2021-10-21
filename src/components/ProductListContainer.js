@@ -8,8 +8,8 @@ const ProductosListContainer = () => {
     const [productos, setProductos] = useState ([])
     const {categoryId} = useParams();
 
-    useEffect(()=>{
-        async function fetchData() {
+    useEffect(()=> {
+        async function fetchData () {
             try {
                 const db = getFirestore(app);
                 const q = query(collection(db, "items"), where("category", "==", categoryId));
@@ -26,6 +26,7 @@ const ProductosListContainer = () => {
                     console.log("Collection does not exist");
                     return;
                 }
+
                 console.log("Collection found");
                 setProductos(categoryList)
                 
@@ -41,7 +42,6 @@ const ProductosListContainer = () => {
             <>Cargando...</>
         )
     } else {
-        console.log(productos)
         return (
             <div className="Productos-list container">
                 <ProductosList productos={productos}/>

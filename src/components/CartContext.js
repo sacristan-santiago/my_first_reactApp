@@ -18,17 +18,13 @@ export default function CartProvider ({defaultValue = [], children}) {
         return cart.some(x=>x.id === ItemId);
     }
 
-    const addItem = async (item, quantity) => {
+    const addItem = (item, quantity) => {
         if (isInCart(item.id)) {
-            const itemToUpdate = cart.find(x=>x.id === item.id);
-            const newQuantity = itemToUpdate.quantity + quantity;
-            itemToUpdate.quantity = newQuantity;
-            console.log(cart)
-            const newCart = cart
-            newCart.splice(newCart.findIndex(x=>x.id===item.id), 1, itemToUpdate);
-            console.log(newCart)
-            
-            console.log("se actualizo cantidad del elemento", item.id)
+            cart.find(x=>x.id === item.id).quantity += quantity
+            //La linea anterior efectivamente modifica cart, pero se llama setCart por prolijidad
+            setCart(cart)
+            console.log(`se modifico la cantidad del item: ${item.id}`)
+            console.log("nuevo carrito: ", cart)
         } else {
             const newCartItem = item;
             item.quantity = quantity;
