@@ -22,7 +22,7 @@ const ItemDetail = (props) => {
                 <p className="card-text">Precio: ${price}/unidad</p>
                 <ItemCount stock={stock} initial ={1} onAdd={onAdd}/>
             </div>
-            <button><NavLink to="/">Volver</NavLink></button>
+            <button className="btn btn-dark"><NavLink className="nav-link-detail-button" to="/">Volver</NavLink></button>
         </div>
         
     )

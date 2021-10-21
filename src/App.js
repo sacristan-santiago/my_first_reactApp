@@ -13,7 +13,6 @@ function App() {
     <BrowserRouter >
       <div className="App">
         <Nav />
-        <p className="text-center">Probá nuestros productos 100% plant based gluten free!</p>
         <Switch>
           <Route exact path="/">
             <CategoriesListContainer />
